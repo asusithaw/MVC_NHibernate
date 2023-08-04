@@ -1,0 +1,22 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Selected Book Details</h1>
+
+<div>
+    <h4>Book ID: @Model.Id</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Title</dt>
+        <dd>@Model.Title</dd>
+        <dt>Author</dt>
+        <dd>@Model.Author</dd>
+        
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

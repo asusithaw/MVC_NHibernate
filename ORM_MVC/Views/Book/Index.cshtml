@@ -1,0 +1,30 @@
+﻿@model IList<Book>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Books in the store</h1>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+    </tr>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@book.Id</td>
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.Genre</td>            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id =book.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id =book.Id  })
+            </td>
+        </tr>
+    }
+</table>
+
+@Html.ActionLink("Create New", "Create")
